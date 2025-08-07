@@ -2,7 +2,7 @@ import { electronAPI } from '@electron-toolkit/preload';
 import { contextBridge } from 'electron';
 
 if (!process.contextIsolated) {
-  throw new Error('contextIsolated is not enabled');
+  throw new Error('contextIsolated is not enabled in the BrowserWindow');
 }
 
 // Custom APIs for renderer

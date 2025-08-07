@@ -1,4 +1,18 @@
 {
+  "compilerOptions": {
+    "moduleResolution": "node16",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@tailwindcss/vite/dist"
+    ]
+  },
   "files": [],
-  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.web.json"
+    }
+  ]
 }
