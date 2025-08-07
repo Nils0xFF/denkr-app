@@ -26,6 +26,15 @@ export default tseslint.config(
       ...eslintPluginReactHooks.configs.recommended.rules,
       ...eslintPluginReactRefresh.configs.vite.rules,
       semi: ['error', 'always'],
+      '@typescript-eslint/explicit-function-return-type': [
+        'warn', // or "error"
+        {
+          allowExpressions: true,
+          allowTypedFunctionExpressions: true,
+          allowDirectConstAssertionInArrowFunctions: true,
+          allowHigherOrderFunctions: true,
+        },
+      ],
     },
   },
   eslintConfigPrettier

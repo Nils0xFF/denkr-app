@@ -3,7 +3,6 @@
 @layer base {
   #root {
     @apply h-full;
-    @apply bg-red-500;
   }
 
   html,
@@ -11,7 +10,7 @@
     @apply h-full;
     @apply select-none;
     @apply bg-transparent;
-    @apply font-mono antialiased text-white;
+    @apply font-mono antialiased;
     @apply overflow-hidden;
   }
 }
