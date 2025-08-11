@@ -1,11 +1,32 @@
-function App(): React.JSX.Element {
+import {
+  ActionRow,
+  AppLayout,
+  Content,
+  MarkdownEditor,
+  NotePreviewList,
+  NoteTitle,
+  Sidebar,
+  TopBar,
+} from '@/components';
+
+const App = (): React.JSX.Element => {
   // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping');
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
-      <h1 className="text-4xl text-blue-500">Welcome to Denkr</h1>
-    </div>
+    <>
+      <TopBar />
+      <AppLayout>
+        <Sidebar className="p-2">
+          <ActionRow className="flex justify-between mt-1" />
+          <NotePreviewList className="mt-3 space-y-1" />
+        </Sidebar>
+        <Content className="border-l bg-zinc-900/50 border-l-white/20">
+          <NoteTitle className="pt-2" />
+          <MarkdownEditor />
+        </Content>
+      </AppLayout>
+    </>
   );
-}
+};
 
 export default App;
