@@ -6,11 +6,17 @@ import {
   MDXEditorProps,
   quotePlugin,
 } from '@mdxeditor/editor';
+import { useMarkdownEditor } from '@renderer/hooks/useMarkdownEditor';
 
-export const MarkdownEditor = ({ ...props }: Partial<MDXEditorProps>): React.JSX.Element => {
+export const MarkdownEditor = ({ ...props }: Partial<MDXEditorProps>): React.JSX.Element | null => {
+  const { selectedNote } = useMarkdownEditor();
+
+  if (!selectedNote) return null;
+
   return (
     <MDXEditor
-      markdown="# Welcome to Denkr"
+      key={selectedNote.id}
+      markdown={selectedNote.content}
       plugins={[headingsPlugin(), listsPlugin(), quotePlugin(), markdownShortcutPlugin()]}
       contentEditableClassName="outline-none min-h-screen max-w-none 
       text-lg px-8 py-5 caret-yellow-500 
